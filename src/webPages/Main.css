@@ -1,19 +1,22 @@
 .Main {
     background-color: rgb(255, 255, 255);
-    padding: 0.5%;
+    position: fixed;
 }
 
 nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 5px;
+    background-color: transparent;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
     height: 30px;
-    margin: .5%;
+    margin: 0;
     padding-left: 4%;
-    box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.3);
+    position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.611);
 }
 
 .nav-links {
@@ -34,49 +37,54 @@ nav {
 
 .logo img {
     margin-left: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
     width: 180px;
+    position: relative;
+    cursor: default;
     /* Adjust the width as needed */
 
 }
 
 /* nav Buttom CSS */
 .nav-btn {
-    appearance: none;
+    font-size: 19px;
+    color: #040404;
+    font-family: Tahoma, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
     border: none;
-    border-radius: 12px;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    color: #9f0000;
-    cursor: auto;
-    display: inline-block;
-    font-family: "bell-MT", "Helvetica Ne";
-    font-size: 20px;
-    font-weight: 600;
-    line-height: normal;
-    min-height: 38px;
-    min-width: 0;
-    outline: none;
-    padding: 0px 20px;
-    margin-right: -20px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 500ms cubic-bezier(.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    will-change: transform;
+    background: none;
+    text-transform: capitalize;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    top: 2px;
 }
 
-.nav-btn:disabled {
-    pointer-events: none;
-}
-
+.nav-btn:focus,
 .nav-btn:hover {
-    color: #fff;
-    background-color: #9f0000;
-    box-shadow: rgba(255, 0, 0, 0.25) 0 3px 15px;
-    transform: translateY(-2px);
+    color: #d52727;
+}
+
+.nav-btn:focus:after,
+.nav-btn:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.nav-btn:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
 }
 
 .nav-btn:active {
@@ -86,26 +94,15 @@ nav {
 
 /* other */
 .container {
-    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-}
-
-.background {
-    flex: 1;
-    margin: 0 .5% 0 .5%;
-    background-color: transparent;
-    border-radius: 10px;
-
+    margin-bottom: -5px;
 }
 
 .background img {
-    box-shadow: 0 5px 10px 5px rgba(255, 0, 0, 0.4);
-    border-radius: 10px;
     flex: 1;
-    width: 100%;
+    width: 110%;
 }
 
 .login-form {
@@ -136,9 +133,8 @@ nav {
 /* dept buttons css */
 #dept {
     /* display: inline-block; */
-    border-radius: 4px;
-    background-color: #5b3d3d;
-    border: none;
+    border-radius: 7px;
+    background-color: #5e1b1b !important;
     color: #FFFFFF;
     text-align: center;
     font-size: 17px;
@@ -170,7 +166,7 @@ button:hover span {
 }
 
 button:hover span:after {
-    opacity: 1;
+    opacity: 10;
     right: 0;
 }
 

@@ -1,0 +1,99 @@
+  .signup-form {
+    flex: 1;
+    overflow: auto;
+    position: absolute;
+    margin-left: 40%;
+    border-radius: 10px;
+    background: #0000006c;
+    width: 30%;
+    height: 400px;
+    padding: 2% 5% 3% 4%;
+    color: white;
+  }
+
+  .signup-form h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 30px;
+    text-align: center;
+    cursor: default;
+    font-family: "arial";
+  }
+
+  .s-form-group {
+    margin-bottom: 20px;
+  }
+
+  .s-form-group label {
+    display: block;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-family: "arial";
+  }
+
+  .s-form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .note {
+    margin-top: 2%;
+    margin-bottom: -1%;
+    font-size: 13px;
+    color: #afafaf
+  }
+
+  /* scrollbar CSS */
+  .signup-form::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .signup::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 4px;
+
+  }
+
+  .signup::-webkit-scrollbar-thumb:hover {
+    background-color: #740202;
+    border-radius: 5px;
+
+  }
+
+  /* sign Up button */
+  .signUp-btn {
+    margin-left: 80%;
+    background-color: #ffffff00;
+    color: #fff;
+    width: 8.5em;
+    height: 2.9em;
+    border: #5e1b1b 0.2em solid;
+    border-radius: 8px;
+    text-align: right;
+    transition: all 0.6s ease;
+  }
+  
+  .signUp-btn:hover {
+    background-color: #5e1b1b;
+    cursor: pointer;
+  }
+  
+  .signUp-btn svg {
+    width: 1.6em;
+    margin: -0.2em 0.6em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+  }
+  
+  .signUp-btn:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .text {
+    margin: 0 1em;
+  }

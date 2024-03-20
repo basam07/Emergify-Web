@@ -7,12 +7,16 @@ function Main() {
 
   return (
     <div className="Main">
+      
       <nav>
         <div className="logo">
-          <img src="./images/logo-nav.png" alt="Emergify Logo" onClick={loginHandle}/>
+          <img
+            src="./images/logo-nav.png"
+            alt="Emergify Logo"
+          />
         </div>
         <ul className="nav-links">
-          <li>
+          <li>  
             <button href="#" className="nav-btn">
               About Us
             </button>
@@ -45,8 +49,7 @@ function Main() {
           <p className="note">
             Note: <br />
             <il>Please select your specific department.</il> <br />
-            <il>Register your self.</il>
-            <br />
+            <il>Register your self.</il> <br />
             <il>If you have already account then login.</il>
           </p>
         </div>
