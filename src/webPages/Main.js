@@ -5,10 +5,10 @@ function Main() {
     window.location.href = "/policelogin";
   };
   const fireLoginHandle = () => {
-    window.location.href = "/policeLogin";
+    window.location.href = "/firelogin";
   };
   const ambulanceLoginHandle = () => {
-    window.location.href = "/policeLogin";
+    window.location.href = "/ambulancelogin";
   };
 
   return (
@@ -45,10 +45,10 @@ function Main() {
               <span>Police</span>
             </button>
             <button id="dept" onClick={fireLoginHandle}>
-              <span>Ambulance</span>
+              <span>Fire Brigade</span>
             </button>
             <button id="dept" onClick={ambulanceLoginHandle}>
-              <span>Fire Brigade</span>
+              <span>Ambulance</span>
             </button>
           </div>
 

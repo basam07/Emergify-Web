@@ -179,4 +179,11 @@ button:hover span:after {
     color: #afafaf
 }
 
+/* erroe */
+.error{
+    margin: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff2323
+}
 ;

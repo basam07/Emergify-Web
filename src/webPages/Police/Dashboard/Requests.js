@@ -1,16 +1,23 @@
 import "./Dashboard.css";
 
-const policeRequests = () => { 
+const PoliceRequests = () => { 
 
+  const requestsHandle = () => {
+    window.location.href = "/policerequests";
+  };
   const acceptsHandle = () => {
-    window.location.href = "/policelogin";
+    window.location.href = "/policeaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/policelogin";
+    window.location.href = "/policependings";
   };
   const declinedHandle = () => {
-    window.location.href = "/policelogin";
+    window.location.href = "/policedeclined";
   };
+  const screenHandle = () => {
+    window.location.href = "/policescreen";
+  };
+
 
   return (
     <div className="d-Main">
@@ -35,7 +42,7 @@ const policeRequests = () => {
           </div>
           <ul>
             <li>
-              <button className="bar-btn" onClick={acceptsHandle}>
+              <button className="bar-btn" onClick={requestsHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -55,7 +62,7 @@ const policeRequests = () => {
               </button>
             </li>
             <li>
-              <button className="bar-btn" onClick={pendingHandle}>
+              <button className="bar-btn" onClick={acceptsHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -75,7 +82,7 @@ const policeRequests = () => {
               </button>
             </li>
             <li>
-              <button className="bar-btn" onClick={declinedHandle}>
+              <button className="bar-btn" onClick={pendingHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -95,7 +102,7 @@ const policeRequests = () => {
               </button>
             </li>
             <li>
-              <button className="bar-btn">
+              <button className="bar-btn" onClick={declinedHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -130,7 +137,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +167,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +197,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -220,7 +227,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +257,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +287,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +317,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -340,7 +347,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +377,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -400,7 +407,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +437,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -460,7 +467,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -490,7 +497,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -520,7 +527,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -550,7 +557,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +587,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -610,7 +617,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -640,7 +647,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -670,7 +677,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -700,7 +707,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -730,7 +737,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -760,7 +767,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -790,7 +797,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -820,7 +827,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -850,7 +857,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -880,7 +887,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -910,7 +917,7 @@ const policeRequests = () => {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -936,4 +943,4 @@ const policeRequests = () => {
   );
 }
 
-export default policeRequests;
+export default PoliceRequests;

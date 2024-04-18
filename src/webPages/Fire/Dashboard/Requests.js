@@ -1,22 +1,23 @@
 import "./Dashboard.css";
 
-function PolicePendings() {
+const FireRequests = () => { 
 
   const requestsHandle = () => {
-    window.location.href = "/policerequests";
+    window.location.href = "/firerequests";
   };
   const acceptsHandle = () => {
-    window.location.href = "/policeaccepts";
+    window.location.href = "/fireaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/policependings";
+    window.location.href = "/firependings";
   };
   const declinedHandle = () => {
-    window.location.href = "/policedeclined";
+    window.location.href = "/firedeclined";
   };
   const screenHandle = () => {
-    window.location.href = "/policescreen";
+    window.location.href = "/firescreen";
   };
+
 
   return (
     <div className="d-Main">
@@ -124,7 +125,7 @@ function PolicePendings() {
         </div>
         <div className="right-Cont custom-scrollbar">
           <ul>
-            <h2>Pendings</h2>
+            <h2>Requests</h2>
             <li className="row">
               <div class="column" id="name">
                 <text>Name of Victum</text>
@@ -942,4 +943,4 @@ function PolicePendings() {
   );
 }
 
-export default PolicePendings;
+export default FireRequests;

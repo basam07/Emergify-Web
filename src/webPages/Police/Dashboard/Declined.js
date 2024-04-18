@@ -1,6 +1,22 @@
 import "./Dashboard.css";
 
-function declinedRequests() {
+function PoliceDeclined() {
+
+  const requestsHandle = () => {
+    window.location.href = "/policerequests";
+  };
+  const acceptsHandle = () => {
+    window.location.href = "/policeaccepts";
+  };
+  const pendingHandle = () => {
+    window.location.href = "/policependings";
+  };
+  const declinedHandle = () => {
+    window.location.href = "/policedeclined";
+  };
+  const screenHandle = () => {
+    window.location.href = "/policescreen";
+  };
 
   return (
     <div className="d-Main">
@@ -25,7 +41,7 @@ function declinedRequests() {
           </div>
           <ul>
             <li>
-              <button className="bar-btn">
+              <button className="bar-btn" onClick={requestsHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -45,7 +61,7 @@ function declinedRequests() {
               </button>
             </li>
             <li>
-              <button className="bar-btn">
+              <button className="bar-btn" onClick={acceptsHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -65,7 +81,7 @@ function declinedRequests() {
               </button>
             </li>
             <li>
-              <button className="bar-btn">
+              <button className="bar-btn" onClick={pendingHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -85,7 +101,7 @@ function declinedRequests() {
               </button>
             </li>
             <li>
-              <button className="bar-btn">
+              <button className="bar-btn" onClick={declinedHandle}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -108,7 +124,7 @@ function declinedRequests() {
         </div>
         <div className="right-Cont custom-scrollbar">
           <ul>
-            <h2>Requests</h2>
+            <h2>Declined</h2>
             <li className="row">
               <div class="column" id="name">
                 <text>Name of Victum</text>
@@ -120,7 +136,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +166,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -180,7 +196,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +226,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -240,7 +256,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +286,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -300,7 +316,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +346,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -360,7 +376,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -390,7 +406,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -420,7 +436,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -450,7 +466,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -480,7 +496,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -510,7 +526,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -540,7 +556,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -570,7 +586,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -600,7 +616,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -630,7 +646,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -660,7 +676,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -690,7 +706,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -720,7 +736,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -750,7 +766,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -780,7 +796,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -810,7 +826,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -840,7 +856,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -870,7 +886,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -900,7 +916,7 @@ function declinedRequests() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button className="list-btn">
+                <button className="list-btn" onClick={screenHandle}>
                   <p>Show</p>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -926,4 +942,4 @@ function declinedRequests() {
   );
 }
 
-export default declinedRequests;
+export default PoliceDeclined;

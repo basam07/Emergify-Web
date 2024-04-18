@@ -1,21 +1,21 @@
 import "./Dashboard.css";
 
-function PolicePendings() {
+function FirePendings() {
 
   const requestsHandle = () => {
-    window.location.href = "/policerequests";
+    window.location.href = "/firerequests";
   };
   const acceptsHandle = () => {
-    window.location.href = "/policeaccepts";
+    window.location.href = "/fireaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/policependings";
+    window.location.href = "/firependings";
   };
   const declinedHandle = () => {
-    window.location.href = "/policedeclined";
+    window.location.href = "/firedeclined";
   };
   const screenHandle = () => {
-    window.location.href = "/policescreen";
+    window.location.href = "/firescreen";
   };
 
   return (
@@ -942,4 +942,4 @@ function PolicePendings() {
   );
 }
 
-export default PolicePendings;
+export default FirePendings;
