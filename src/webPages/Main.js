@@ -1,8 +1,14 @@
 import "./Main.css";
 
 function Main() {
-  const loginHandle = () => {
-    window.location.href = "/login";
+  const policeLoginHandle = () => {
+    window.location.href = "/policelogin";
+  };
+  const fireLoginHandle = () => {
+    window.location.href = "/policeLogin";
+  };
+  const ambulanceLoginHandle = () => {
+    window.location.href = "/policeLogin";
   };
 
   return (
@@ -35,13 +41,13 @@ function Main() {
           <h2>Select Department</h2>
 
           <div className="dept-btn">
-            <button id="dept" onClick={loginHandle}>
+            <button id="dept" onClick={policeLoginHandle}>
               <span>Police</span>
             </button>
-            <button id="dept" onClick={loginHandle}>
+            <button id="dept" onClick={fireLoginHandle}>
               <span>Ambulance</span>
             </button>
-            <button id="dept" onClick={loginHandle}>
+            <button id="dept" onClick={ambulanceLoginHandle}>
               <span>Fire Brigade</span>
             </button>
           </div>

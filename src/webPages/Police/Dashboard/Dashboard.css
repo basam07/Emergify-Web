@@ -80,16 +80,90 @@
 }
 
 .column button{
-  margin-left: 70%;
+  margin-left: 60%;
 }
 
 
 /* list button */
+.list-btn {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.list-btn {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 400;
+  font-size: 15px;
+  gap: .5rem;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.list-btn p {
+  margin: 0;
+  position: relative;
+  font-size: 17px;
+  color: var(--primary-color);
+}
+
+.list-btn::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.list-btn p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Show";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.list-btn:hover::after {
+  width: 100%;
+}
+
+.list-btn:hover p::before {
+  width: 100%;
+}
+
+.list-btn:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+.list-btn svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
 
 
 /* logo */
 .bar-logo img {
-  height: 12em;
+  height: 8em;  
+  margin: 20px 0 10px 0;
+  border-radius: 50%;
+  padding: 3px;
+  box-shadow: 0px 0px 5px rgba(190, 0, 0, 0.611);
+
 }
 
 /* Scrollbar CSS */
@@ -115,10 +189,10 @@
   width: 16em;
   height: 2.9em;
   border: #ffffff00;
-  border-radius: 8px;
+  border-radius: 2px;
   text-align: left;
   transition: all 0.6s ease;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
   padding: 0 1em;
 }
 

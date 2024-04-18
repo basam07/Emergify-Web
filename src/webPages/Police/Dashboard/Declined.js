@@ -1,9 +1,6 @@
 import "./Dashboard.css";
 
-function Main() {
-  const loginHandle = () => {
-    window.location.href = "/login";
-  };
+function declinedRequests() {
 
   return (
     <div className="d-Main">
@@ -123,8 +120,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -139,8 +150,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -155,8 +180,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -171,8 +210,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -187,8 +240,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -203,8 +270,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -219,8 +300,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -235,8 +330,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -251,8 +360,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -267,8 +390,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -283,8 +420,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -299,8 +450,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -315,8 +480,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -331,8 +510,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -347,8 +540,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -363,8 +570,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -379,8 +600,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -395,8 +630,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -411,8 +660,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -427,8 +690,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -443,8 +720,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -459,8 +750,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -475,8 +780,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -491,8 +810,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -507,8 +840,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -523,8 +870,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -539,8 +900,22 @@ function Main() {
                 <text>Distance</text>
               </div>
               <div class="column" id="button">
-                <button href="#" className="">
-                  Show
+                <button className="list-btn">
+                  <p>Show</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
                 </button>
               </div>
             </li>
@@ -551,4 +926,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default declinedRequests;

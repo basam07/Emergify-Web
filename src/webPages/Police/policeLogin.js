@@ -1,10 +1,10 @@
 import "./Login.css";
-function Login() {
+const policeLogin = () => {
   const signupHandle = () => {
-    window.location.href = "/signup";
+    window.location.href = "/policeSignup";
   };
   const loginHandle = () => {
-    window.location.href = "/dashboard";
+    window.location.href = "/policeRequests";
   };
 
   return (
@@ -90,4 +90,4 @@ function Login() {
     </div>
   );
 }
-export default Login;
+export default policeLogin;

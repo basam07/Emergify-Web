@@ -1,5 +1,5 @@
 import "./SignUp.css";
-function SignUp() {
+function piliceSignUp() {
   const loginHandle = () => {
     window.location.href = "/login";
   };
@@ -127,4 +127,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default piliceSignUp;
