@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import "./SignUp.css"; // Import CSS file
 import { auth, db } from "../../index";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
-const AmbulanceSignUp = () => {
+const PoliceSignUp = () => {
   // State variables for form inputs and errors
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,7 +12,6 @@ const AmbulanceSignUp = () => {
   const [cnic, setCnic] = useState("");
   const [password, setPassword] = useState("");
   const [conPassword, setConPassword] = useState("");
-
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneNoError, setPhoneNoError] = useState("");
@@ -21,14 +20,30 @@ const AmbulanceSignUp = () => {
   const [conPasswordError, setConPasswordError] = useState("");
 
   const loginHandle = () => {
-    // Redirect to ambulance login page
-    window.location.href = "/ambulancelogin";
+    window.location.href = "/policelogin";
   };
 
   const signupHandle = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent default form submission
 
-    // Reset previous errors
+    // firebase authentication for login
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(async (userCredentials) => {
+        console.log(userCredentials);
+        const userId = auth.currentUser.uid;
+        console.log("!!! curent user id", userId);
+      })
+      .catch((error) => {
+        console.log("!!!!!!already user exist", error);
+      });
+    // await setDoc(doc(db, "police", ""), {
+    //   name: name,
+    //   email: email,
+    //   phoneNo: phoneNo
+    // });
+    // console.log("!!! user save in database");
+
+    // Reset any previous error messages
     setNameError("");
     setEmailError("");
     setPhoneNoError("");
@@ -37,71 +52,59 @@ const AmbulanceSignUp = () => {
     setConPasswordError("");
 
     // Validate form inputs
-    if (!name) {
-      setNameError("Please enter your full name");
-      return;
-    }
+    // if (!name) {
+    //   setNameError("Please enter your full name");
+    //   return;
+    // }
     if (!email) {
       setEmailError("Please enter a valid email address");
       return;
     }
-    if (!phoneNo) {
-      setPhoneNoError("Please enter your mobile number");
-      return;
-    }
-    // insert regex for check phone number
-    const phoneRegex = /^03[0-9]{9}$/; //for 03081111111
-    if (!phoneRegex.test(phoneNo)) {
-      setPhoneNoError("Please enter your corrent Phone Number {03012345678}");
-      return;
-    }
-    if (!cnic) {
-      setCnicError("Please enter your CNIC");
-      return;
-    }
+    // if (!phoneNo) {
+    //   setPhoneNoError("Please enter your mobile number");
+    //   return;
+    // }
+    // if (!cnic) {
+    //   setCnicError("Please enter your CNIC");
+    //   return;
+    // }
     if (!password) {
       setPasswordError("Please enter a password");
       return;
     }
-    if (!conPassword) {
-      setConPasswordError("Please confirm your password");
-      return;
-    }
-    if (password !== conPassword) {
-      setConPasswordError("Passwords do not match");
-      return;
-    }
+    // if (!conPassword) {
+    //   setConPasswordError("Please confirm your password");
+    //   return;
+    // }
+    // if (password !== conPassword) {
+    //   setConPasswordError("Passwords do not match");
+    //   return;
+    // }
 
-    try {
-      const userCredentials = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const userId = userCredentials.user.uid;
-      console.log("!!! surrent user id is ", userId);
-      await saveUserInDb(userId);
-      alert("Sign up successful");
-      // Redirect to login after successful signup
-      console.log("Login successful");
-      window.location.href = "/policelogin";
-    } catch (error) {
-      console.log("!!!!Error signing up:", error.message);
-      // Handle specific errors like email already exists, etc.
-      // Update state to show appropriate error messages
-    }
+    // If validation passes, proceed with login
+    // window.location.href = "/policelogin";
+    
   };
 
-  //save user data in DB
-  const saveUserInDb = async (userId) => {
-    await setDoc(doc(db, "police", userId), {
-      name: name,
-      email: email,
-      phoneNo: phoneNo,
-      cnic: cnic
-    });
-    console.log("!!!!User saved in DB successfully");
-  };
+  const saveUserInDb=async()=>{
+        console.log('!! Save User In DB Called');
+
+  }
+  // const saveUserInDb = async () => {
+  //   console.log('!! Save User In DB Called');
+  //   const docRef = doc(db, "policelogin");
+  //   const payload = { name: name, email: email, phoneNo: phoneNo };
+  //   await setDoc(docRef, payload).then((value)=>{
+  //     console.log('set doc success with value');
+  //     console.log(value);
+  //   }).catch((error)=>{
+  //     console.log('!! Error');
+  //     console.log(error);
+  //   });
+    
+  //   console.log("!!! call function saveUsserInDb");
+  //   return;
+  // };
 
   return (
     <div className="Main">
@@ -112,12 +115,14 @@ const AmbulanceSignUp = () => {
         </div>
         <ul className="nav-links">
           <li>
-            <button className="nav-btn" onClick={loginHandle}>
+            <button href="#" className="nav-btn" onClick={loginHandle}>
               Login
             </button>
           </li>
           <li>
-            <button className="nav-btn">About Us</button>
+            <button href="#" className="nav-btn">
+              About Us
+            </button>
           </li>
         </ul>
       </nav>
@@ -131,7 +136,7 @@ const AmbulanceSignUp = () => {
         {/* Sign Up form */}
         <div className="signup-form custom-scrollbar">
           <h2>Sign Up</h2>
-          <form>
+          <form onSubmit={saveUserInDb}>
             {/* Name input */}
             <div className="s-form-group">
               <label htmlFor="name">Name:</label>
@@ -207,18 +212,18 @@ const AmbulanceSignUp = () => {
               )}
             </div>
             {/* Sign Up button */}
-            <button className="signUp-btn" type="submit" onSubmit={signupHandle}>
+            <button className="signUp-btn" type="submit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth="1.5"
+                stroke-width="1.5"
                 stroke="currentColor"
                 className="w-6 h-6"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
                 ></path>
               </svg>
@@ -227,8 +232,8 @@ const AmbulanceSignUp = () => {
             {/* Note */}
             <p className="note">
               Note: <br />
-              <span>If you already have an account, </span>
-              <span>click Login button to proceed to the Dashboard.</span>
+              <il>If you already have an account, </il> <br />
+              <il>click Login button to proceed to the Dashboard.</il>
             </p>
           </form>
         </div>
@@ -237,4 +242,4 @@ const AmbulanceSignUp = () => {
   );
 };
 
-export default AmbulanceSignUp;
+export default PoliceSignUp;

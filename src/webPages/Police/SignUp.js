@@ -1,7 +1,10 @@
+import "./SignUp.css";
 import React, { useState } from "react";
-import "./SignUp.css"; // Import CSS file
+import { auth, db } from "../../index";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
-const PoliceSignUp = () => {
+function PoliceSignUp() {
   // State variables for form inputs and errors
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,13 +21,14 @@ const PoliceSignUp = () => {
   const [conPasswordError, setConPasswordError] = useState("");
 
   const loginHandle = () => {
+    // Redirect to ambulance login page
     window.location.href = "/policelogin";
   };
 
-  const signupHandle = (event) => {
-    event.preventDefault(); // Prevent default form submission
+  const signupHandle = async (event) => {
+    event.preventDefault();
 
-    // Reset any previous error messages
+    // Reset previous errors
     setNameError("");
     setEmailError("");
     setPhoneNoError("");
@@ -45,6 +49,12 @@ const PoliceSignUp = () => {
       setPhoneNoError("Please enter your mobile number");
       return;
     }
+    // insert regex for check phone number
+    const phoneRegex = /^03[0-9]{9}$/; //for 03081111111
+    if (!phoneRegex.test(phoneNo)) {
+      setPhoneNoError("Please enter your corrent Phone Number {03012345678}");
+      return;
+    }
     if (!cnic) {
       setCnicError("Please enter your CNIC");
       return;
@@ -62,8 +72,34 @@ const PoliceSignUp = () => {
       return;
     }
 
-    // If validation passes, proceed with login
-    window.location.href = "/policelogin";
+    try {
+      const userCredentials = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const userId = userCredentials.user.uid; // get current user firebase ID
+      await saveUserInDb(userId);
+      alert("Sign up successful");
+      // Redirect to login after successful signup
+      console.log("Login successful");
+      window.location.href = "/policelogin";
+    } catch (error) {
+      console.log("!!!!Error signing up:", error.message);
+      // Handle specific errors like email already exists, etc.
+      // Update state to show appropriate error messages
+    }
+  };
+
+  //save user data in DB
+  const saveUserInDb = async (userId) => {
+    await setDoc(doc(db, "police", userId), {
+      name: name,
+      email: email,
+      phoneNo: phoneNo,
+      cnic: cnic,
+    });
+    console.log("!!!!User saved in DB successfully");
   };
 
   return (
@@ -96,7 +132,7 @@ const PoliceSignUp = () => {
         {/* Sign Up form */}
         <div className="signup-form custom-scrollbar">
           <h2>Sign Up</h2>
-          <form onSubmit={signupHandle}>
+          <form>
             {/* Name input */}
             <div className="s-form-group">
               <label htmlFor="name">Name:</label>
@@ -172,20 +208,20 @@ const PoliceSignUp = () => {
               )}
             </div>
             {/* Sign Up button */}
-            <button className="signUp-btn" type="submit">
+            <button className="signUp-btn" type="submit" onClick={signupHandle}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="w-6 h-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                ></path>
+                />
               </svg>
               <div className="text">Sign Up</div>
             </button>
@@ -200,6 +236,6 @@ const PoliceSignUp = () => {
       </div>
     </div>
   );
-};
+}
 
 export default PoliceSignUp;

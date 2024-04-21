@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css"; // Import CSS file
+import { auth } from "../../index";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const FireLogin = () => {
   // State variables for form inputs and errors
@@ -15,6 +17,15 @@ const FireLogin = () => {
   const loginHandle = (event) => {
     event.preventDefault(); // Prevent default form submission
 
+    // firebase authentication for login
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        console.log("login succesfully",userCredentials);
+      })
+      .catch((error) => {
+        console.log('!!!!!!user not found',error);
+      });
+
     // Reset any previous error messages
     setEmailError("");
     setPasswordError("");
@@ -29,11 +40,9 @@ const FireLogin = () => {
       return;
     }
 
-    // If validation passes, proceed with login (replace with actual login logic)
-    // For example, you might use fetch() to send a login request to your backend
-    console.log("Logging in with:", email, password);
-    // Simulate redirect after successful login (replace with appropriate logic)
-    window.location.href = "/fireDashboard";
+    // If validation passes, proceed with login
+    window.location.href = "/firerequests";
+    console.log("Login succesfully");
   };
 
   return (

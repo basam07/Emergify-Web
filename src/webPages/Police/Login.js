@@ -1,5 +1,7 @@
 import "./Login.css";
 import React, { useState } from "react";
+import { auth } from "../../index";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const PoliceLogin = () => {
   // State variables for form inputs and errors
@@ -14,6 +16,15 @@ const PoliceLogin = () => {
 
   const loginHandle = (event) => {
     event.preventDefault(); // Prevent default form submission
+
+    // firebase authentication for login
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredentials) => {
+        console.log("login succesfully",userCredentials);
+      })
+      .catch((error) => {
+        console.log('!!!!!!user not found',error);
+      });
 
     // Reset any previous error messages
     setEmailError("");
@@ -30,7 +41,8 @@ const PoliceLogin = () => {
     }
 
     // If validation passes, proceed with login
-    window.location.href = "/policerequests"; 
+    window.location.href = "/policerequests";
+    console.log("Login succesfully");
   };
 
   return (
