@@ -16,19 +16,25 @@ const PoliceLogin = () => {
 
   const loginHandle = (event) => {
     event.preventDefault(); // Prevent default form submission
+    // Reset any previous error messages
+    setEmailError("");
+    setPasswordError("");
 
     // firebase authentication for login
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
-        console.log("login succesfully",userCredentials);
+        // console.log("login succesfully", userCredentials);
+        // If validation passes, proceed with login
+        window.location.href = "/policerequests";
       })
       .catch((error) => {
-        console.log('!!!!!!user not found',error);
+        console.log("!!!!!!user not found", error);
+        if (error.code === "auth/user-not-found") {
+          setEmailError("User not found");
+        } else if (error.code === "auth/wrong-password") {
+          setPasswordError("Wrong password");
+        }
       });
-
-    // Reset any previous error messages
-    setEmailError("");
-    setPasswordError("");
 
     // Validate email and password
     if (!email) {
@@ -39,10 +45,6 @@ const PoliceLogin = () => {
       setPasswordError("Please enter your Password");
       return;
     }
-
-    // If validation passes, proceed with login
-    window.location.href = "/policerequests";
-    console.log("Login succesfully");
   };
 
   return (

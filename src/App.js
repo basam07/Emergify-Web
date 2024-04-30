@@ -41,7 +41,7 @@ const App = () => {
         <Route path="/policeaccepts" element={<PoliceAccepts />} />
         <Route path="/policependings" element={<PolicePendings />} />
         <Route path="/policedeclined" element={<PoliceDeclined />} />
-        <Route path="/policescreen" element={<PoliceScreen />} />
+        <Route path="/policescreen/:userId" element={<PoliceScreen />} />
         {/* Fire pages */}
         <Route path="/firelogin" element={<FireLogin />} />
         <Route path="/fireSignup" element={<FireSignUp />} />

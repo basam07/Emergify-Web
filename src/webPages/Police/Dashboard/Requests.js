@@ -1,6 +1,10 @@
 import "./Dashboard.css";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../index";
+import { useEffect, useState } from "react";
 
-const PoliceRequests = () => { 
+const PoliceRequests = () => {
+  const [victimData, setVictimData] = useState([]);
 
   const requestsHandle = () => {
     window.location.href = "/policerequests";
@@ -14,10 +18,43 @@ const PoliceRequests = () => {
   const declinedHandle = () => {
     window.location.href = "/policedeclined";
   };
-  const screenHandle = () => {
-    window.location.href = "/policescreen";
-  };
+  const screenHandle = (userId) => {
+    console.log(userId);
+    window.location.href = `/policescreen/${userId}`;
+  }; 
 
+  //fetch data from server
+  useEffect(() => {
+    const fetchData = async (doc) => {
+
+      try {
+        const usersRef = collection(db, "policerequests");
+        const querySnapshot = await getDocs(usersRef);
+
+
+        const userDataArray = [];
+
+        querySnapshot.forEach((doc) => {
+          if (doc.exists()) {
+            const userData = doc.data();
+            const UId = doc.id;
+            const { firstName, lastName, phoneNumber } = userData;
+
+            userDataArray.push({ firstName, lastName, phoneNumber, UId });
+            // console.log("!!! yes user data show in list",userData);
+          } else {
+            console.log("No such document!");
+          }
+        });
+
+        setVictimData(userDataArray); // Store data array in state
+      } catch (error) {
+        console.error("Error fetching documents:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="d-Main">
@@ -126,821 +163,46 @@ const PoliceRequests = () => {
         <div className="right-Cont custom-scrollbar">
           <ul>
             <h2>Requests</h2>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
-            <li className="row">
-              <div class="column" id="name">
-                <text>Name of Victum</text>
-              </div>
-              <div class="column" id="pNo">
-                <text>Phone No</text>
-              </div>
-              <div class="column" id="distance">
-                <text>Distance</text>
-              </div>
-              <div class="column" id="button">
-                <button className="list-btn" onClick={screenHandle}>
-                  <p>Show</p>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </li>
+            {victimData.map((victim, index) => (
+              <li className="row" key={index}>
+                <div className="column" id="name">
+                  <text>{victim.firstName + " " + victim.lastName}</text>
+                </div>
+                <div className="column" id="pNo">
+                  <text>{victim.phoneNumber}</text>
+                </div>
+                <div class="column" id="distance">
+                  <text>Distance</text>
+                </div>
+                <div >
+                  <text>{victim.UId}</text>
+                </div>
+                <div className="column" id="button">
+                  <button className="list-btn" onClick={() => screenHandle(victim.UId)}>
+                    <p>Show</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default PoliceRequests;
