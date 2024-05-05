@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../index";
 import { useEffect, useState } from "react";
 
-const PoliceAccepts = () => {
+const PoliceDeclined = () => {
   const [victimData, setVictimData] = useState([]);
 
   const requestsHandle = () => {
@@ -14,7 +14,7 @@ const PoliceAccepts = () => {
     window.location.href = "/policeaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/policependings";
+    window.location.href = "/policecompleted";
   };
   const declinedHandle = () => {
     window.location.href = "/policedeclined";
@@ -96,7 +96,7 @@ const PoliceAccepts = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Requests</div>
+                <div class="text">Declined</div>
               </button>
             </li>
             <li>
@@ -136,7 +136,7 @@ const PoliceAccepts = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Pending</div>
+                <div class="text">Completed</div>
               </button>
             </li>
             <li>
@@ -206,6 +206,6 @@ const PoliceAccepts = () => {
   );
 };
 
-export default PoliceAccepts;
+export default PoliceDeclined;
 
 

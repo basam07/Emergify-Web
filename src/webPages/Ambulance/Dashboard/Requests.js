@@ -13,7 +13,7 @@ const AmbulanceRequests = () => {
     window.location.href = "/ambulanceaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/ambulancependings";
+    window.location.href = "/ambulancecompleted";
   };
   const declinedHandle = () => {
     window.location.href = "/ambulancedeclined";
@@ -135,7 +135,7 @@ const AmbulanceRequests = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Pending</div>
+                <div class="text">Completed</div>
               </button>
             </li>
             <li>

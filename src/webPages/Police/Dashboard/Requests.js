@@ -13,7 +13,7 @@ const PoliceRequests = () => {
     window.location.href = "/policeaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/policependings";
+    window.location.href = "/policecompleted";
   };
   const declinedHandle = () => {
     window.location.href = "/policedeclined";
@@ -135,7 +135,7 @@ const PoliceRequests = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Pending</div>
+                <div class="text">Completed</div>
               </button>
             </li>
             <li>

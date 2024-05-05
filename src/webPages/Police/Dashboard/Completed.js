@@ -3,32 +3,30 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../index";
 import { useEffect, useState } from "react";
 
-const AmbulanceAccepts = () => {
+function PoliceCompleted() {
   const [victimData, setVictimData] = useState([]);
 
   const requestsHandle = () => {
-    window.location.href = "/ambulancerequests";
+    window.location.href = "/policerequests";
   };
   const acceptsHandle = () => {
-    window.location.href = "/ambulanceaccepts";
+    window.location.href = "/policeaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/ambulancecompleted";
+    window.location.href = "/policecompleted";
   };
   const declinedHandle = () => {
-    window.location.href = "/ambulancedeclined";
+    window.location.href = "/policedeclined";
   };
-  const screenHandle = (userId) => {
-    console.log(userId);
-    window.location.href = `/ambulancescreen/${userId}`;
-  }; 
+  const screenHandle = () => {
+    window.location.href = "/policescreen";
+  };
 
-  //fetch data from server
   useEffect(() => {
     const fetchData = async (doc) => {
 
       try {
-        const usersRef = collection(db, "ambulanceDeclined");
+        const usersRef = collection(db, "policeCompleted");
         const querySnapshot = await getDocs(usersRef);
 
 
@@ -161,8 +159,8 @@ const AmbulanceAccepts = () => {
           </ul>
         </div>
         <div className="right-Cont custom-scrollbar">
-          <ul>
-            <h2>Accepts</h2>
+        <ul>
+            <h2>Completed</h2>
             {victimData.map((victim, index) => (
               <li className="row" key={index}>
                 <div className="column" id="name">
@@ -203,8 +201,6 @@ const AmbulanceAccepts = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AmbulanceAccepts;
-
-
+export default PoliceCompleted;

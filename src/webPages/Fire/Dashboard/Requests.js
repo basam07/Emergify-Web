@@ -13,7 +13,7 @@ const FireRequests = () => {
     window.location.href = "/fireaccepts";
   };
   const pendingHandle = () => {
-    window.location.href = "/firependings";
+    window.location.href = "/firecompleted";
   };
   const declinedHandle = () => {
     window.location.href = "/firedeclined";
@@ -135,7 +135,7 @@ const FireRequests = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Pending</div>
+                <div class="text">Completed</div>
               </button>
             </li>
             <li>

@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../index";
 import { useEffect, useState } from "react";
 
-const AmbulanceAccepts = () => {
+function AmbulanceCompleted() {
   const [victimData, setVictimData] = useState([]);
 
   const requestsHandle = () => {
@@ -18,17 +18,15 @@ const AmbulanceAccepts = () => {
   const declinedHandle = () => {
     window.location.href = "/ambulancedeclined";
   };
-  const screenHandle = (userId) => {
-    console.log(userId);
-    window.location.href = `/ambulancescreen/${userId}`;
-  }; 
+  const screenHandle = () => {
+    window.location.href = "/ambulancescreen";
+  };
 
-  //fetch data from server
   useEffect(() => {
     const fetchData = async (doc) => {
 
       try {
-        const usersRef = collection(db, "ambulanceDeclined");
+        const usersRef = collection(db, "ambulanceCompleted");
         const querySnapshot = await getDocs(usersRef);
 
 
@@ -161,8 +159,8 @@ const AmbulanceAccepts = () => {
           </ul>
         </div>
         <div className="right-Cont custom-scrollbar">
-          <ul>
-            <h2>Accepts</h2>
+        <ul>
+            <h2>Completed</h2>
             {victimData.map((victim, index) => (
               <li className="row" key={index}>
                 <div className="column" id="name">
@@ -203,8 +201,6 @@ const AmbulanceAccepts = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AmbulanceAccepts;
-
-
+export default AmbulanceCompleted;

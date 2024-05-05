@@ -82,7 +82,7 @@ function PoliceSignUp() {
       await saveUserInDb(userId);
       alert("Sign up successful");
       // Redirect to login after successful signup
-      console.log("Login successful");
+      // console.log("Login successful");
       window.location.href = "/policelogin";
     } catch (error) {
       console.log("!!!!Error signing up:", error.message);
