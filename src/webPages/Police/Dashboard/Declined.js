@@ -96,7 +96,7 @@ const PoliceDeclined = () => {
                   ></path>
                 </svg>
 
-                <div class="text">Declined</div>
+                <div class="text">Requests</div>
               </button>
             </li>
             <li>
@@ -163,7 +163,7 @@ const PoliceDeclined = () => {
         </div>
         <div className="right-Cont custom-scrollbar">
           <ul>
-            <h2>Accepts</h2>
+            <h2>Declined</h2>
             {victimData.map((victim, index) => (
               <li className="row" key={index}>
                 <div className="column" id="name">
