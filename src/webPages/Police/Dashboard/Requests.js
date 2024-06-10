@@ -174,9 +174,6 @@ const PoliceRequests = () => {
                 <div class="column" id="distance">
                   <text>Distance</text>
                 </div>
-                <div >
-                  <text>{victim.UId}</text>
-                </div>
                 <div className="column" id="button">
                   <button className="list-btn" onClick={() => screenHandle(victim.UId)}>
                     <p>Show</p>

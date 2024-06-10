@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../../../index";
-import Map from "../../../components/Map.js";
+import Map from "../../../components/Map";
 
 const PoliceScreen = () => {
   const { userId } = useParams();
@@ -82,59 +82,90 @@ const PoliceScreen = () => {
         </ul>
       </nav>
 
-      <div className="details">
-        {userData ? (
-          <>
-            <h2>User Details</h2>
-            <p>
-              Name: {userData.firstName} {userData.lastName}
-            </p>
-            <p>
-              Location: {userData.latitude}, {userData.longitude}
-            </p>
-            <p>Phone Number: {userData.phoneNumber}</p>
-            <p>User ID: {userId}</p>
-            <Map latitude={userData.latitude} longitude={userData.longitude} />
-          </>
-        ) : (
-          <p>Loading user data...</p>
-        )}
-      </div>
+      <div className="d-Details">
+        <div className="upper-Cont">
+          <ul>
+            {userData ? (
+              <li className="rows">
+                <div className="columns">
+                  <p>
+                    <b>Name:</b> {userData.firstName} {userData.lastName}
+                  </p>
+                </div>
+                <div className="columns">
+                  <p><b>Phone NO:</b> {userData.phoneNumber}</p>
+                </div>
+                <div class="columns" >
+                  <p><b>Gender:</b> {userData.gender}</p>
+                </div>
+                <div class="columns" >
+                  <p><b>Gender:</b> {userData.cnic}</p>
+                </div>
+              </li>
+            ) : (
+              <p>Loading user data...</p>
+            )}
+          </ul>
+        </div>
 
-      <button className="show-btn" type="button" onClick={handleAccept}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-          ></path>
-        </svg>
-        <div className="text">Accept</div>
-      </button>
-      <button className="show-btn" type="button" onClick={handleDecline}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-          ></path>
-        </svg>
-        <div className="text">Decline</div>
-      </button>
+        <div className="details">
+        <div className="left-Map-Cont">
+          {userData ? (
+            <>
+              <Map
+                latitude={userData.latitude}
+                longitude={userData.longitude}
+              />
+            </>
+          ) : (
+            <p>Loading user data...</p>
+          )}
+        </div>
+        <div className="right-Camera-Cont">
+          <h2>Camera</h2>
+        </div>
+        </div>
+        
+        
+        <div className="lower-Cont">
+        <button className="show-btn" type="button" onClick={handleAccept}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+            ></path>
+          </svg>
+          <div className="text">Accept</div>
+        </button>
+        <button className="show-btn" type="button" onClick={handleDecline}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+            ></path>
+          </svg>
+          <div className="text">Decline</div>
+        </button>
+
+        </div>
+        
+      </div>
     </div>
   );
 };

@@ -1,9 +1,71 @@
 /* main container */
-.detail {
-  
+.d-Details {
+  overflow: auto !important;
+  height: 90vh;
+}
+.upper-Cont {
+  background-color: rgb(255, 255, 255);
+  border: #ff0000;
+  width: 100%;/* Allow scrolling for right content */
+}
+.upper-Cont ul {
+  margin-left: -16px;
+}
+
+.upper-Cont li {
+  display: flex;
+}
+.rows {
+  clear: both;
+  border: solid 1px;
+  border-radius: 5px;
+  margin-bottom: .1%;
+  width: 98.5%;
+}
+
+.columns {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  margin-left: 2%;
+  font-size: 17px;
+    
+}
+.columns p{
+  margin: 2px 0px;
+}
+
+/* details container */
+.details  {
+  display: flex;
+}
+
+/* left map container */
+.left-Map-Cont {
+  width: 70%;
+  margin: 0 1.7%;
+}
+
+/* right camera container */
+.right-Camera-Cont {
+  width: 25%;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* lower container */
+.lower-Cont {
+  display: flex;
+  justify-content: center;
+}
+.lower-Cont button {
+  margin-left: 3%;
+
 }
 
 /* show button */
+
 .show-btn {
     margin-top: 1%;
     margin-left: 87%;
