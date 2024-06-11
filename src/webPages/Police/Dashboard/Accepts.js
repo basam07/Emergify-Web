@@ -18,9 +18,7 @@ const PoliceAccepts = () => {
   const declinedHandle = () => {
     window.location.href = "/policedeclined";
   };
-  const screenHandle = (userId) => {
-    console.log(userId);
-  }; 
+  
 
   //fetch data from server
   useEffect(() => {
